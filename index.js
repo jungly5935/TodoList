@@ -18,7 +18,7 @@ const generateTempalate = (todo) => {
                 </li>`
   todolist.innerHTML += html;
 };
-//...
+//..
 
 function addTodos(e){
   const todo = submitForm.add.value;
