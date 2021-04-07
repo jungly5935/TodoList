@@ -1,0 +1,167 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  /* min-height: 450px; */
+  height: 100vh;
+  margin: 0;
+  background: radial-gradient(
+    ellipse farthest-corner at center top,
+    #ff9379 30%,
+    #f26089 100%
+  );
+  color: #fff;
+  /* font-family: "Nunito", serif; */
+}
+
+.todoList {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  height: 500px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 7px 30px rgba(62, 9, 11, 0.3); /* 그림자 */
+}
+
+.cover-img {
+  background: url("cat.png");
+  height: 190px;
+  background-size: cover;
+  background-position: 10% 20%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  position: relative;
+}
+.cover-img::after {
+  background: rgba(0, 0, 0, 0.3);
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.cover-img h3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* text-transform: uppercase; */
+  /* font-size: 32px;
+  font-weight: 500; */
+  z-index: 0;
+}
+.content {
+  padding: 10px 20px;
+}
+.content form {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 15px;
+  /* padding: 0 10px; */
+  border-bottom: 1px dashed #8e979c;
+}
+.content form > * {
+  /* background: transparent; */
+  border: none;
+  height: 35px;
+  margin-top: 5px;
+}
+.content input[type="text"] {
+  /* [type="text"] 제외해도 결과 같음*/
+  /* padding: 0 5px; */
+  /* font-weight: 700; */
+  font-size: 1.2rem;
+  color: black;
+  outline: none; /* 클릭했을때 나오는 파란 선 */
+}
+.content .input-buttons a {
+  /* text-decoration: none; */
+}
+.content .input-buttons i {
+  margin-top: 5px;
+  /* margin-left: 30px; */
+  font-size: 20px;
+  color: #8e979c;
+  cursor: cell;
+}
+.content ul.todos {
+  /* .todos 제외 ok */
+  /* margin-left: 0; */
+  padding: 0px;
+  /* letter-spacing: none; */
+  height: 220px;
+  overflow: auto; /* scroll도 ok */
+}
+.content li {
+  /* user-select: none; */
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between; /* 요소  (공백)  요소 */
+}
+.content li i {
+  color: #6c717b;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+.content input[type="checkbox"] {
+  display: none;
+}
+.content input[type="checkbox"] + label {
+  color: #6c717b;
+  font-size: 15px;
+  cursor: pointer;
+  position: relative;
+  border-radius: 3px;
+  /* display: inline-block; */
+  padding: 5px 5px 5px 30px;
+}
+.content input[type="checkbox"] + label:hover {
+  color: #353a42;
+  /* background-color: #f4f7fa; */
+}
+.content input[type="checkbox"] + label span.check {
+  position: absolute;
+  left: 2px;
+  top: 50%;
+  transform: translatey(-50%);
+  width: 18px;
+  height: 18px;
+  display: flex; /* ?? flex랑 block 둘다 되네? */
+  background: white;
+  border-radius: 3px;
+  border: 1px solid #b8bfcc;
+  box-shadow: 0 2px 3px #f0f4f8;
+}
+.content input[type="checkbox"]:checked + label {
+  color: #aeb7c6;
+  text-decoration: line-through; /* 글자 중간에 선 만들기 */
+}
+.content input[type="checkbox"]:checked + label span.check {
+  /* background-color: transparent; */
+  border-color: transparent;
+  /* box-shadow: none; */
+}
+.content input[type="checkbox"] + label span.check::after {
+  width: 100%;
+  height: 100%;
+  content: "";
+  display: block;
+  position: absolute;
+  background-image: url("https://tjgillweb.github.io/Vacation-Todo-App/images/tick.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px 16px;
+  transform: scale(0);
+  transition: transform 300ms cubic-bezier(0.3, 0, 0, 1.5);
+}
+.content input[type="checkbox"]:checked + label span.check::after {
+  transform: scale(1);
+}
