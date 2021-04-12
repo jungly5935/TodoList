@@ -30,7 +30,7 @@ body {
 }
 
 .cover-img {
-  background: url("cat.png");
+  /* background: url("cat.png"); */
   height: 190px;
   background-size: cover;
   background-position: 10% 20%;
@@ -96,7 +96,7 @@ body {
   /* margin-left: 0; */
   padding: 0px;
   /* letter-spacing: none; */
-  height: 220px;
+  height: 200px;
   overflow: auto; /* scroll도 ok */
 }
 .content li {
@@ -164,4 +164,27 @@ body {
 }
 .content input[type="checkbox"]:checked + label span.check::after {
   transform: scale(1);
+}
+.content #select-all {
+  color: gray;
+  position: absolute;
+  /* left: 250px; */
+  left: 20px;
+  bottom: 10px;
+  padding: 2px;
+  margin: 2px;
+  border: 1px dashed #8e979c;
+  text-decoration: none;
+}
+.content #del {
+  position: absolute;
+  /* left: 200px; */
+  right: 20px;
+  bottom: 10px;
+  margin-right: 10px;
+  color: gray;
+  padding: 2px;
+  margin: 2px;
+  text-decoration: none;
+  border: 1px dashed #8e979c;
 }
