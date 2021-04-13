@@ -30,7 +30,7 @@ body {
 }
 
 .cover-img {
-  /* background: url("cat.png"); */
+  background: url("cat1.png");
   height: 190px;
   background-size: cover;
   background-position: 10% 20%;

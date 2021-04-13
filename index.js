@@ -10,7 +10,8 @@ const list = document.querySelectorAll('.todos li');
 const allSelect = document.getElementById('select-all');
 const del = document.getElementById('del');
 const trash = document.querySelectorAll('.fa fa-trash-o delete')
-let checkAll = false;
+const img_show = document.getElementById('show-image');
+
 let listLength = list.length;
 
 allSelect.addEventListener("click",(e)=>{
@@ -82,12 +83,12 @@ let imgArray= new Array();
 for(let i=1;i<=4;i++){
   imgArray[i] = "cat" + i + ".png";
 }
-function showImage(){
+function showImage(e){
   let imgNum = Math.round(Math.random()*3)+1;
-  let objImg = document.getElementsByClassName("cover-img");
-  objImg.src = imgArray[imgNum];
-  
-  console.log(objImg.src);
+
+  let objImg = document.getElementsByClassName("cover-img")[0];
+  console.log(objImg);
+  objImg.style.backgroundImage = 'url(' + imgArray[imgNum] + ')';  
+  console.log(objImg);
 }
 showImage();
-
