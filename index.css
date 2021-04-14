@@ -16,22 +16,20 @@ body {
   color: #fff;
   /* font-family: "Nunito", serif; */
 }
-
 .todoList {
-  position: absolute;
+  /* position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 320px;
-  height: 500px;
+  width: 320px;*/
+  height: 880px;
   background: #fff;
   border-radius: 15px;
   box-shadow: 0 7px 30px rgba(62, 9, 11, 0.3); /* 그림자 */
 }
 
 .cover-img {
-  background: url("cat1.png");
-  height: 190px;
+  height: 500px;
   background-size: cover;
   background-position: 10% 20%;
   border-top-left-radius: 10px;
@@ -45,7 +43,7 @@ body {
   /* text-transform: uppercase; */
   /* font-size: 32px;
   font-weight: 500; */
-  z-index: 0;
+  z-index: 2;
 }
 
 #slider {
@@ -120,6 +118,7 @@ body {
   /* [type="text"] 제외해도 결과 같음*/
   /* padding: 0 5px; */
   /* font-weight: 700; */
+  width: 100%;
   font-size: 1.2rem;
   color: black;
   outline: none; /* 클릭했을때 나오는 파란 선 */
@@ -129,10 +128,12 @@ body {
 }
 .content .input-buttons i {
   margin-top: 5px;
-  /* margin-left: 30px; */
+  margin-right: 10px;
   font-size: 20px;
   color: #8e979c;
   cursor: cell;
+  /* display: flex;
+  justify-content: space-between; */
 }
 .content ul.todos {
   /* .todos 제외 ok */
@@ -230,4 +231,44 @@ body {
   margin: 2px;
   text-decoration: none;
   border: 1px dashed #8e979c;
+}
+@media (max-width: 480px) {
+  .todoList {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    height: 500px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 7px 30px rgba(62, 9, 11, 0.3); /* 그림자 */
+  }
+  .cover-img {
+    height: 190px;
+    background-size: cover;
+  }
+
+  .slider_item img {
+    width: inherit;
+    height: inherit;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+  }
+  .content .input-buttons i {
+    margin-top: 5px;
+
+    font-size: 20px;
+    color: #8e979c;
+    cursor: cell;
+  }
+  .content input[type="text"] {
+    /* [type="text"] 제외해도 결과 같음*/
+    /* padding: 0 5px; */
+    /* font-weight: 700; */
+    width: 100%;
+    font-size: 1.2rem;
+    color: black;
+    outline: none; /* 클릭했을때 나오는 파란 선 */
+  }
 }

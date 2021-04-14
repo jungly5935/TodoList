@@ -13,6 +13,7 @@ const trash = document.querySelectorAll('.fa fa-trash-o delete')
 const img_show = document.getElementById('show-image');
 
 let listLength = list.length;
+let checkAll = false;
 
 allSelect.addEventListener("click",(e)=>{
   let lists = document.querySelectorAll('.todo_check');
@@ -31,6 +32,7 @@ allSelect.addEventListener("click",(e)=>{
   }
   
 })
+
 del.addEventListener('click', (e)=> {
   let lists = document.querySelectorAll('.todo_check');
   for(let i=0;i<lists.length; i++ ){
